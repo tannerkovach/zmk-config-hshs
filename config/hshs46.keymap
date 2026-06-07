@@ -28,6 +28,22 @@
 &lt { tapping-term-ms = <190>; };
 
 / {
+    macros {
+        mp: mp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp M &kp A &kp S &kp T &kp E &kp R &kp LS(C) &kp H &kp LS(I) &kp E &kp LS(F) &kp AMPS &kp M &kp J &kp O &kp L &kp N &kp I &kp R &kp M &kp A &kp R &kp K &kp N5 &kp I &kp V &kp E &kp EXCL>;
+            label = "MP";
+        };
+
+        gp: gp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(M) &kp J &kp O &kp L &kp N &kp I &kp R &kp M &kp A &kp R &kp K &kp N5 &kp I &kp V &kp E>;
+            label = "GP";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,10 +57,10 @@
  */
 
             bindings = <
-&trans     &kp Q                       &kp W           &kp F        &kp P           &kp B                                               &kp J  &kp L           &kp U        &kp Y           &kp SEMI                    &trans
-&trans     &mt LS(LA(LC(LEFT_GUI))) A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_GUI T  &kp G                                               &kp M  &mt LEFT_GUI N  &mt LCTRL E  &mt LEFT_ALT I  &mt LS(LA(LC(LEFT_GUI))) O  &kp RIGHT_SHIFT
-&kp LC(G)  &kp Z                       &kp X           &kp C        &kp D           &kp V  &kp SPACE                         &mo 6      &kp K  &kp H           &kp COMMA    &kp DOT         &kp SLASH                   &kp LC(B)
-                                                                    &mo 5           &mo 4  &mo 3      &kp LEFT_SHIFT  &mo 2  &kp SPACE  &mo 1  &mo 5
+&mo 6      &kp Q                       &kp W           &kp F        &kp P           &kp B                                           &kp J  &kp L                     &kp U        &kp Y           &kp SEMI           &mo 6
+&trans     &mt LS(LA(LC(LEFT_GUI))) A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_GUI T  &kp G                                           &kp M  &mt LEFT_GUI N            &mt LCTRL E  &mt LEFT_ALT I  &mt RIGHT_SHIFT O  &trans
+&kp LC(B)  &kp Z                       &kp X           &kp C        &kp D           &kp V  &mp                           &gp        &kp K  &kp H                     &kp COMMA    &kp DOT         &kp SLASH          &kp LC(B)
+                                                                    &mo 5           &mo 4  &mo 3  &kp LEFT_SHIFT  &mo 2  &kp SPACE  &mo 1  &kp LS(LA(LC(LEFT_GUI)))
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -60,10 +76,10 @@
  */
 
             bindings = <
-&trans       &trans          &trans       &trans             &trans         &trans                                       &kp HOME         &kp LC(LS(TAB))  &kp UP       &kp LC(TAB)  &kp END          &trans
-&trans       &kp ESC         &kp TAB      &kp BSPC           &kp RET        &kp Paste                                    &kp LC(PERCENT)  &kp LEFT         &kp DOWN     &kp RIGHT    &kp LG(PERCENT)  &trans
-&bootloader  &kp LS(ESCAPE)  &kp LS(TAB)  &kp LA(BACKSPACE)  &kp LS(ENTER)  &trans     &trans                  &kp Redo  &kp PAGE_UP      &kp CARET        &kp PERCENT  &kp DOLLAR   &kp PAGE_DOWN    &kp RCTRL
-                                                             &trans         &trans     &trans  &trans  &trans  &trans    &trans           &trans
+&trans  &trans          &trans       &trans             &trans         &trans                                       &kp HOME         &kp LC(LS(TAB))  &kp UP       &kp LC(TAB)  &kp END          &trans
+&trans  &kp ESC         &kp TAB      &kp BSPC           &kp RET        &kp Paste                                    &kp LC(PERCENT)  &kp LEFT         &kp DOWN     &kp RIGHT    &kp LG(PERCENT)  &trans
+&trans  &kp LS(ESCAPE)  &kp LS(TAB)  &kp LA(BACKSPACE)  &kp LS(ENTER)  &trans     &trans                  &kp Redo  &kp PAGE_UP      &kp CARET        &kp PERCENT  &kp DOLLAR   &kp PAGE_DOWN    &kp RCTRL
+                                                        &trans         &trans     &trans  &trans  &trans  &trans    &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -98,10 +114,10 @@
  */
 
             bindings = <
-&trans  &kp N1   &kp N2       &kp N3        &kp N4       &kp N5                                  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
-&trans  &kp ESC  &kp TAB      &kp BSPC      &kp RET      &trans                                  &none   &kp N4  &kp N5  &kp N6  &none   &none
-&trans  &kp Z    &kp LS(TAB)  &kp LA(BSPC)  &kp LS(RET)  &trans  &trans                  &trans  &none   &kp N1  &kp N2  &kp N3  &none   &none
-                                            &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N1          &kp N2       &kp N3        &kp N4       &kp N5                                  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
+&trans  &kp ESC         &kp TAB      &kp BSPC      &kp RET      &trans                                  &none   &kp N4  &kp N5  &kp N6  &none   &none
+&trans  &kp LS(ESCAPE)  &kp LS(TAB)  &kp LA(BSPC)  &kp LS(RET)  &trans  &trans                  &trans  &none   &kp N1  &kp N2  &kp N3  &none   &none
+                                                   &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
