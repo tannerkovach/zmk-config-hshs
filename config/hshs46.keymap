@@ -20,6 +20,13 @@
 #define Paste  LC(V)
 #define Redo   LC(Y)
 
+&mt {
+    tapping-term-ms = <190>;
+    flavor = "tap-preferred";
+};
+
+&lt { tapping-term-ms = <190>; };
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -34,10 +41,10 @@
  */
 
             bindings = <
-&trans     &kp Q                       &kp W           &kp F        &kp P           &kp B                                       &kp J      &kp L           &kp U        &kp Y           &kp SEMI                    &trans
-&trans     &mt LS(LA(LC(LEFT_GUI))) A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_GUI T  &kp G                                       &kp M      &mt LEFT_GUI N  &mt LCTRL E  &mt LEFT_ALT I  &mt LS(LA(LC(LEFT_GUI))) O  &kp RIGHT_SHIFT
-&kp LC(G)  &kp Z                       &kp X           &kp C        &kp D           &kp V  &kp SPACE                     &mo 6  &kp K      &kp H           &kp COMMA    &kp DOT         &kp SLASH                   &kp LC(B)
-                                                                    &mo 4           &mo 3  &kp LEFT_SHIFT  &mo 5  &mo 5  &mo 2  &kp SPACE  &mo 1
+&trans     &kp Q                       &kp W           &kp F        &kp P           &kp B                                               &kp J  &kp L           &kp U        &kp Y           &kp SEMI                    &trans
+&trans     &mt LS(LA(LC(LEFT_GUI))) A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_GUI T  &kp G                                               &kp M  &mt LEFT_GUI N  &mt LCTRL E  &mt LEFT_ALT I  &mt LS(LA(LC(LEFT_GUI))) O  &kp RIGHT_SHIFT
+&kp LC(G)  &kp Z                       &kp X           &kp C        &kp D           &kp V  &kp SPACE                         &mo 6      &kp K  &kp H           &kp COMMA    &kp DOT         &kp SLASH                   &kp LC(B)
+                                                                    &mo 5           &mo 4  &mo 3      &kp LEFT_SHIFT  &mo 2  &kp SPACE  &mo 1  &mo 5
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
