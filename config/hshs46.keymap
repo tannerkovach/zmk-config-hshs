@@ -136,10 +136,10 @@
 
         window_nav {
             bindings = <
-&trans  &trans          &trans              &kp LG(UP_ARROW)    &trans         &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT)  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LG(Z)       &kp LG(X)           &kp LG(C)           &kp LG(D)      &kp LG(V)  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                                &trans         &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans              &kp LG(UP_ARROW)    &trans         &trans                                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT)  &trans                                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &none           &kp K_CUT           &kp K_COPY          &none          &kp K_PASTE  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                                &trans         &trans       &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
